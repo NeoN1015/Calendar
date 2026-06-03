@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     const API_BASE = window.location.hostname === 'localhost' 
         ? 'http://localhost:3000' 
-        : 'https://your-app-name.onrender.com';  // ← replace later with your real Render URL
+        : 'https://calendar-8mgz.onrender.com';
 
     const calendarEl = document.getElementById("calendar");
     const eventTable = document.getElementById("eventTable");
