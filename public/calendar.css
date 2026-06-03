@@ -1,0 +1,441 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff; /* white background */
+    font-family: Arial, sans-serif;
+}
+
+/* Main container - three-column layout */
+.calendar-container {
+    display: flex;
+    height: 100vh;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Left side - Event List */
+.event-list {
+    flex: 1;
+    background: #fff; /* white */
+    border: 2px solid #000; /* black border */
+    border-radius: 20px;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Middle - Add Event Form */
+.add-event {
+    flex: 1;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Right side - Calendar */
+.calendar {
+    flex: 1;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 2px solid #000; /* black border */
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #000; /* black header */
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff; /* white text */
+}
+
+td {
+    font-weight: bold;
+    font-size: 15px;
+    color: #000; /* black text */
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, button, textarea {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #000; /* black border */
+    background-color: #fff; /* white background */
+    color: #000; /* black text */
+}
+
+button {
+    background-color: #000; /* black button */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #444; /* dark gray on hover */
+}
+
+/* FullCalendar styles */
+.fc {
+    height: 90% !important;
+}
+
+.fc-daygrid-event {
+    background-color: #000 !important; /* black */
+    border-color: #444 !important; /* dark gray */
+    color: #fff !important; /* white text */
+    font-size: 14px !important;
+}
+
+.fc-button {
+    background-color: #000 !important; /* black */
+    color: #fff !important; /* white */
+    border: none !important;
+}
+
+.fc-button:hover {
+    background-color: #444 !important; /* dark gray */
+}
+
+.fc-button-active {
+    background-color: #000 !important; /* black */
+    color: #fff !important; /* white */
+}
+
+.fc-toolbar-title {
+    font-size: 20px !important;
+    font-weight: bold;
+    color: #000;
+}
+
+.fc-col-header-cell {
+    font-size: 14px !important;
+    font-weight: bold;
+    color: #000;
+}
+
+.fc-day-today {
+    background-color: #000 !important; /* black */
+    color: #fff !important; /* white */
+}
+
+.fc-daygrid-day {
+    border: 1px solid #000 !important; /* black border */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* dim background */
+}
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.close-modal {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000;
+}
+
+.add-event-btn {
+    background-color: #000; /* black */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.add-event-btn:hover {
+    background-color: #444; /* dark gray */
+}
+
+.add-event-btn::before {
+    content: "+";
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.today-highlight {
+    background-color: #eee !important; /* light gray */
+}
+
+button.action-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #000; /* black */
+    color: white;
+}
+
+.delete-btn {
+    background-color: #ff0000; /* dark gray */
+    color: white;
+}
+
+.description-cell.expanded {
+    white-space: normal !important;
+}
+
+/* Enhanced Event List Styles */
+.event-list {
+    flex: 1;
+    background: #fff; /* white */
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.event-list h2 {
+    border-bottom: 1px solid #ccc;
+    color: #000; /* black */
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.event-item {
+    background-color: #f9f9f9; /* very light gray */
+    border-left: 4px solid #000; /* black */
+    border-radius: 4px;
+    margin-bottom: 15px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.event-item:hover {
+    background-color: #eee; /* light gray */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.event-item-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.event-title {
+    font-weight: bold;
+    color: #000;
+    font-size: 18px;
+}
+
+.event-date {
+    color: #555; /* dark gray */
+    font-size: 14px;
+}
+
+.event-description {
+    color: #333; /* dark gray */
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.event-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.event-actions button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #2f00ff; /* black */
+    color: #fff;
+    margin: 10px;
+}
+
+.delete-btn {
+    background-color: #ff0000; /* dark gray */
+    color: white;
+}
+
+.empty-events {
+    color: #999; /* gray */
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+}
+
+.help-btn {
+    margin-bottom: 10px;
+    padding: 6px 12px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.help-popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 30px;
+    width: 400px;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.help-content {
+    position: relative;
+}
+
+.close-help {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 18px;
+    color: #000;
+    cursor: pointer;
+}
+
+.logo-cognate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.logo-cognate img {
+    height: 60px;
+    width: auto;
+    max-width: 100%;
+}
+
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.members-box {
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    width: 100%;
+}
+
+.members-box ul {
+    padding-left: 20px;
+    color: #333;
+}
+
+.members-box h3 {
+    font-size: 18px;
+    color: #000;
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #333;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    z-index: 2000;
+    animation: fadeOut 3s forwards;
+}
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+#membersList {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+/* Help popup - originally used jQuery fade, now just block/none */
+#helpPopup {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 30px;
+    width: 400px;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.help-content {
+    position: relative;
+}
+.close-help {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 18px;
+    color: #000;
+    cursor: pointer;
+}
