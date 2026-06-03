@@ -10,7 +10,7 @@ const db = new sqlite3.Database("events.db");
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname));
 
 // Create Events Table
 db.run(`CREATE TABLE IF NOT EXISTS events (
