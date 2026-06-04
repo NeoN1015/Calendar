@@ -1,4 +1,3 @@
-Markdown
 # 📅 Event Calendar – Group Project
 
 A full‑stack event calendar app with drag & drop, multiple views, and persistent storage.  
@@ -6,7 +5,7 @@ Built with **Node.js + Express + SQLite** (backend) and **HTML/CSS/JS + FullCale
 
 ## 🌐 Live Demo
 
-- **Frontend (GitHub Pages):** [https://NeoN1015.github.io/Calendar/](https://NeoN1015.github.io/Calendar/)  
+- **Frontend (GitHub Pages):** [https://NeoN1015.github.io/Calendar/](https://neon1015.github.io/Calendar/calendar.html))  
 - **Backend API (Render):** [https://calendar-8mgz.onrender.com/events](https://calendar-8mgz.onrender.com/events)
 
 > ⚠️ **Note:** The free backend tier spins down after periods of inactivity. The first request may take up to 50 seconds to wake up. Please be patient.
@@ -21,7 +20,6 @@ Built with **Node.js + Express + SQLite** (backend) and **HTML/CSS/JS + FullCale
 4. **Drag & drop** – Move an event to a different day/time directly on the calendar.  
 5. **Resize** – Drag the bottom edge of an event to change its end time.  
 6. **Change view** – Use the navigation buttons at the top‑right (month, week, day).  
-
 
 All changes are saved instantly in a SQLite database (online mode) or your local database (local mode).
 
@@ -62,20 +60,22 @@ If you want to run the project locally on your machine:
 Clone the repository
 
 Bash
-git clone [https://github.com/NeoN1015/Calendar.git](https://github.com/NeoN1015/Calendar.git)
-cd Calendar
+   git clone [https://github.com/NeoN1015/Calendar.git](https://github.com/NeoN1015/Calendar.git)
+   cd Calendar
 Install dependencies
 
 Bash
-npm install
+   npm install
 Start the backend server
 
 Bash
-node server.js
-Open the frontend Visit http://localhost:3000/calendar.html (or index.html if renamed) in your browser. The local SQLite database (events.db) will be created automatically upon startup.
+   node server.js
+Open the frontend
+
+Visit http://localhost:3000/calendar.html (or index.html if renamed) in your browser. The local SQLite database (events.db) will be created automatically upon startup.
 
 🚀 Future Roadmap & Improvements
-This project is fully functional, but here are some ideal directions to take it further:
+This project is fully functional on desktop browser environments, but the UI is currently not responsive and is not optimized for mobile devices. Here are ideal directions to take it further:
 
 Short‑term (Easy)
 Toast notifications – Already implemented! (green/red pop‑ups)
@@ -87,6 +87,8 @@ Export events – Add an “Export to iCal / CSV” button.
 Search / filter – Filter the event list dynamically by name or date.
 
 Medium‑term (Intermediate)
+Mobile Responsiveness & Friendliness – Restructure CSS layouts, media queries, and layout adjustments to fit smaller mobile viewports natively.
+
 User authentication – Allow users to register/log in and maintain private calendars.
 
 Recurring events – Support daily, weekly, or monthly repeats.
@@ -121,8 +123,6 @@ Frontend: HTML5, CSS3, Vanilla JavaScript, FullCalendar API
 Hosting: GitHub Pages (Frontend), Render (Backend)
 
 Version Control: Git & GitHub
-
-GitHub
 
 👥 Contributors
 Neon
