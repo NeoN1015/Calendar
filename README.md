@@ -122,16 +122,14 @@ Hosting: GitHub Pages (Frontend), Render (Backend)
 
 Version Control: Git & GitHub
 
-👥 Group Members
-Esplana, Gerald
+GitHub
 
-Molina, John Hedrick
-
-Orongan, John Bernie
-
-Rocero, Harry
-
-Sisit, Rohcell King
+👥 Contributors
+Neon
+Pelops
+John Bernie
+Harry
+Rohcell King
 
 📄 License
 This project is for educational purposes only. Feel free to use and modify it as a reference.
