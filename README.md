@@ -21,7 +21,7 @@ Built with **Node.js + Express + SQLite** (backend) and **HTML/CSS/JS + FullCale
 4. **Drag & drop** – Move an event to a different day/time directly on the calendar.  
 5. **Resize** – Drag the bottom edge of an event to change its end time.  
 6. **Change view** – Use the navigation buttons at the top‑right (month, week, day).  
-7. **Team members** – Click “Show Members” to see the group behind this project.
+
 
 All changes are saved instantly in a SQLite database (online mode) or your local database (local mode).
 
