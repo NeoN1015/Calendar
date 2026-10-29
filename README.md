@@ -125,6 +125,7 @@ Hosting: GitHub Pages (Frontend), Render (Backend)
 Version Control: Git & GitHub
 
 👥 Contributors
+
 Neon
 Pelops
 John Bernie
